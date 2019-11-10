@@ -1,11 +1,10 @@
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>My CRUD in NodeJS</title>
+    <meta charset="UTF-8">
+    <title>My CRUD in NodeJS</title>
 </head>
 <body>
-
-<h2>Registros<h2>
+    <h2>People<h2>
     <hr>
     <table border="1">
         <thead>
@@ -14,14 +13,15 @@
                 <td>E-mail</td>
             </tr>
         </thead>
+
         <tbody>
-        <% data.forEach(function(details) { %>
+        <% data.forEach(function(person) { %>
             <tr>
-                <td><%= details.name %></td>
-                <td><%= details.email %></td>
+                <td><%= person.name %></td>
+                <td><%= person.email %></td>
             </tr>
-            <% }) %>
+        <% }) %>
         </tbody>
-        <button><a href="/">Voltar</a></button>
+    </table>
 </body>
 </html>
