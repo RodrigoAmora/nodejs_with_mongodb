@@ -20,11 +20,11 @@ const pointSchema = new mongoose.Schema({
   }
 });
 
-var userSchema = new mongoose.Schema({
+var librarySchema = new mongoose.Schema({
 	    name: String,
 	    email: String,
 	    location :  { type: {type:String}, coordinates: [Number]},
-	}, { collection: 'people' }
+	}, { collection: 'library' }
 );
 
-module.exports = { Mongoose: mongoose, UserSchema: userSchema }
+module.exports = { Mongoose: mongoose, LibrarySchema: librarySchema }
