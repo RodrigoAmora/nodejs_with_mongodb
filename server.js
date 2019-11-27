@@ -5,6 +5,8 @@ const morgan = require('morgan');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 
+const port = process.env.PORT || 3000;
+
 // Make a server express
 const app = express();
 
@@ -24,7 +26,7 @@ var library = require('./routers/library');
 
 app.use('/', library);
 
-// The server will run into of port 9000
-app.listen(9000, () => console.log('Express started at http://localhost:9000'));
+// Running the server
+app.listen(port, () => console.log('Express started at http://localhost:3000'));
 
 module.exports = app;
