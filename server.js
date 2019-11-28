@@ -4,11 +4,15 @@ const express = require('express');
 const morgan = require('morgan');
 const cors = require('cors');
 const bodyParser = require('body-parser');
-
+const path = require('path');
 const port = process.env.PORT || 3000;
 
 // Make a server express
 const app = express();
+
+// view engine setup
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
 
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -22,7 +26,6 @@ console.log("URI: "+process.env.DB_HOST)
 
 //ROUTERS
 var library = require('./routers/library');
-
 
 app.use('/', library);
 
