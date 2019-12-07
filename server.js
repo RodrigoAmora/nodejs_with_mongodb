@@ -27,7 +27,7 @@ console.log("URI: "+process.env.DB_HOST)
 //ROUTERS
 var library = require('./routers/library');
 
-app.use('/', library);
+app.use('/library', library);
 
 // Running the server
 app.listen(port, () => console.log('Express started at http://localhost:3000'));
